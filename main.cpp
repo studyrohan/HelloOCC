@@ -56,6 +56,7 @@
 #include <TopoDS_Compound.hxx>
 #include "TopLoc_Location.hxx"
 #include "head.h"
+#include "BRepPrimAPI_MakeSphere.hxx"
 
 TopoDS_Shape testTopo();
 
@@ -98,10 +99,14 @@ int main(int argc, char** argv)
 	//	<< sh;
 	//vout << testTopo();
 	//vout << FilletedBox(3, 4, 5, 1);
-	testProject();
-	testFileSave();
-	testInteract();
-	vout << OnEvolvedblend1();
+	//testProject();
+	//testFileSave();
+	//testInteract();
+	//testBrep();
+	testOCAF();
+	TopoDS_Shape sphere = BRepPrimAPI_MakeSphere(gp_Pnt(1,2,3),6);
+	vout << sphere;
+	//vout << OnEvolvedblend1();
 
 	vout.StartMessageLoop();
 	return 0;

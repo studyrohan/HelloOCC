@@ -147,7 +147,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Brep.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ocaf.cpp" />
     <ClCompile Include="src.cpp" />
     <ClCompile Include="TDataStd_Sample.cpp" />
     <ClCompile Include="TName_sample.cpp" />
