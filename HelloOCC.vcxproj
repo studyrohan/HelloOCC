@@ -149,10 +149,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src.cpp" />
+    <ClCompile Include="TDataStd_Sample.cpp" />
+    <ClCompile Include="TName_sample.cpp" />
     <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="ViewerInteractor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="head.h" />
     <ClInclude Include="Viewer.h" />
     <ClInclude Include="ViewerInteractor.h" />
   </ItemGroup>

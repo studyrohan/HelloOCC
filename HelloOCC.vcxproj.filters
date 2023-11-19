@@ -27,12 +27,21 @@
     <ClCompile Include="src.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="TName_sample.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TDataStd_Sample.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Viewer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="ViewerInteractor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="head.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

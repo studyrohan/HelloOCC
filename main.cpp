@@ -55,9 +55,11 @@
 #include <TopoDS_Shape.hxx>
 #include <TopoDS_Compound.hxx>
 #include "TopLoc_Location.hxx"
+#include "head.h"
 
-extern int testFileSave();
 TopoDS_Shape testTopo();
+
+
 TopoDS_Shape FilletedBox(const Standard_Real a,
 	const Standard_Real  b,
 	const Standard_Real  c,
@@ -96,7 +98,9 @@ int main(int argc, char** argv)
 	//	<< sh;
 	//vout << testTopo();
 	//vout << FilletedBox(3, 4, 5, 1);
+	testProject();
 	testFileSave();
+	testInteract();
 	vout << OnEvolvedblend1();
 
 	vout.StartMessageLoop();
@@ -183,4 +187,3 @@ TopoDS_Shape testTopo()
 	return shape;
 
 }
-
