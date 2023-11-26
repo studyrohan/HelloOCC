@@ -105,7 +105,7 @@ int main(int argc, char** argv)
 	//testBrep();
 	//testOCAF();
 	//TopoDS_Shape sphere = BRepPrimAPI_MakeSphere(gp_Pnt(1,2,3),6);
-	TopoDS_Shape shape =  testNurbs();
+	TopoDS_Shape shape =  testNurbsCurve();
 	vout << shape;
 	//vout << OnEvolvedblend1();
 

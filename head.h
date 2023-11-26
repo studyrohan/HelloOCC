@@ -9,3 +9,4 @@ int testBrep(void);
 int testOCAF();
 
 TopoDS_Shape testNurbs();
+TopoDS_Shape testNurbsCurve();

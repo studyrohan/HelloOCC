@@ -11,10 +11,12 @@
 #include "TopoDS_Face.hxx"
 #include "BRepPrimAPI_MakePrism.hxx"
 #include <ShapeAnalysis_Edge.hxx>
+#include "Geom_BSplineCurve.hxx"
 #include <vector>
 #include "TopExp_Explorer.hxx"
 #include "TopoDS.hxx"
 #include "TopoDS_Edge.hxx"
+#include "BRepBuilderAPI_MakeEdge.hxx"
 
 //TopoDS_Shape CreateNurbs()
 //{
@@ -72,7 +74,41 @@
 //
 //}
 
+TopoDS_Shape testNurbsCurve()
+{
+	TColgp_Array1OfPnt poles(1, 2);
+	poles(1) = gp_Pnt(0.0, 0.0, 0.0);
+	poles(2) = gp_Pnt(1.0, 0.0, 0.0);
 
+	TColStd_Array1OfReal knots(1, 2);
+	knots(1) = 0.0;
+	knots(2) = 1.0;
+
+	TColStd_Array1OfInteger mults(1, 2);
+	mults(1) = 2;
+	mults(2) = 2;
+
+	Handle (Geom_BSplineCurve) myCurve = new Geom_BSplineCurve(poles, knots, mults, 1);
+
+
+	// 创建BRep边对象
+	TopoDS_Edge edge = BRepBuilderAPI_MakeEdge(myCurve);
+
+	gp_Vec direction(0, 0, 1); // 在Z轴方向上拉伸，可以根据需求进行调整
+
+	// 使用边对象和拉伸向量创建面
+	//TopoDS_Face face;
+	BRepPrimAPI_MakePrism prismBuilder(edge, direction);
+	return prismBuilder.Shape();
+
+	// 输出曲线的参数范围
+	//Standard_Real uMin = myCurve->FirstParameter();
+	//Standard_Real uMax = myCurve->LastParameter();
+
+	//std::cout << "Parameter Range: u(" << uMin << ", " << uMax << ")" << std::endl;
+	//return nullptr;
+
+}
 TopoDS_Shape testNurbs()
 {
 	// 创建一个面
