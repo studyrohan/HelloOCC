@@ -103,9 +103,10 @@ int main(int argc, char** argv)
 	//testFileSave();
 	//testInteract();
 	//testBrep();
-	testOCAF();
-	TopoDS_Shape sphere = BRepPrimAPI_MakeSphere(gp_Pnt(1,2,3),6);
-	vout << sphere;
+	//testOCAF();
+	//TopoDS_Shape sphere = BRepPrimAPI_MakeSphere(gp_Pnt(1,2,3),6);
+	TopoDS_Shape shape =  testNurbs();
+	vout << shape;
 	//vout << OnEvolvedblend1();
 
 	vout.StartMessageLoop();
